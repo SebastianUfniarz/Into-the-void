@@ -1,15 +1,17 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float targetSpeed;
     public float acceleration = 7f;
     public float decceleration = 7f;
-    public float velPower = 0.9f;    
+    public float velPower = 0.9f;
+    public float attackMoveSpeed = 0f;
     public float frictionAmount = 0.2f;
+    public float knockbackForceX = 15f;
 
     public float jumpImpulse = 10f;
     public float maxJumpTime = 0.3f;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private float movement;
     private bool _isMoving = false;
 
+    private bool canReceiveInput = true;
     private float lastOnGroundTime;
     private bool isJumping = false;
     private float jumpTimeCounter;
@@ -30,15 +33,24 @@ public class PlayerController : MonoBehaviour
     private TouchingDirections touchingDirections;
     private Rigidbody2D rb;
     private Animator animator;
-
+    private Damageable damageable;
+    private InventoryManager inventoryManager; 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        touchingDirections = GetComponent<TouchingDirections>();       
+        touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
+        if (inventoryManager == null)
+        {
+            inventoryManager = FindObjectOfType<InventoryManager>();
+        }
     }
-
+    
+    public void BlockInput() => CanReceiveInput = false;
+    public void UnblockInput() => CanReceiveInput = true;
+    
     public bool IsMoving
     {
         get { return _isMoving; }
@@ -55,6 +67,22 @@ public class PlayerController : MonoBehaviour
 
             animator.SetBool(AnimationStrings.isMoving, _isMoving);
         }
+    }
+
+    public bool CanReceiveInput
+    {
+        get => canReceiveInput;
+        set
+        {
+            canReceiveInput = value;
+            animator.SetBool(AnimationStrings.canReceiveInput, canReceiveInput);
+        }
+    }
+
+    public float AttackCooldown
+    {
+        get { return animator.GetFloat(AnimationStrings.attackCooldown); }
+        private set { animator.SetFloat(AnimationStrings.attackCooldown, Mathf.Max(value, 0)); }
     }
 
     public bool IsFacingRight
@@ -85,11 +113,18 @@ public class PlayerController : MonoBehaviour
     {
         UpdateGroundTime();
         HandleMovement();
-        HandleGravity();        
+        HandleGravity();
+
+        if (AttackCooldown > 0)
+        {
+            AttackCooldown -= Time.deltaTime;
+        }
     }
 
     private void HandleMovement()
-    {        
+    {
+        if (!damageable.LockVelocity)
+        {
             if (CanMove)
             {
                 targetSpeed = moveInput.x * moveSpeed;
@@ -103,7 +138,12 @@ public class PlayerController : MonoBehaviour
                 {
                     ApplyFriction();
                 }
-            }                 
+            }
+            else
+            {
+                rb.velocity = new Vector2(moveInput.x * attackMoveSpeed, rb.velocity.y);
+            }
+        }
         CurrentSpeed = Mathf.Abs(rb.velocity.x);
     }
 
@@ -207,5 +247,48 @@ public class PlayerController : MonoBehaviour
     private bool CanJump()
     {
         return lastOnGroundTime > 0 && CanMove;
-    }   
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started && touchingDirections.isGrounded && CanReceiveInput && !inventoryManager.IsInventoryOpen && !inventoryManager.IsEquipmentOpen)
+        {
+            animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        canReceiveInput = true;
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    public void OnOpenInventory(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            inventoryManager.ToggleInventory();
+        }
+    }
+
+    public void OnOpenEquipment(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            inventoryManager.ToggleEquipment();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            knockbackDirection.y = 0;
+
+            Vector2 knockback = new Vector2(knockbackDirection.x * knockbackForceX, rb.velocity.y);
+
+            damageable.Hit(10, knockback);
+        }
+    }
 }
