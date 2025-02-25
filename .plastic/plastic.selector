@@ -1,3 +1,4 @@
 repository "Platformówka Inżynierowie@sebastianufniarz3@cloud"
   path "/"
-    smartbranch "/main" changeset "36"   
+    br "/main"
+    co "/main"
