@@ -4,78 +4,101 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
+    public GameObject ArtifactPanel; 
     public GameObject EquipmentButton;
     public GameObject InventoryButton;
+    public GameObject ArtifactButton;
 
     private bool isInventoryOpen = false;
     internal bool isEquipmentOpen = false;
+    private bool isArtifactPanelOpen = false;
 
     public ItemSlot[] itemSlot;
     public EquipmentSlot[] equipmentSlot;
     public EquippedSlot[] equippedSlot;
     public ItemSo[] itemSOs;
+    public ArtifactSlot[] artifactSlot;
 
     public bool IsEquipmentOpen => isEquipmentOpen;
     public bool IsInventoryOpen => isInventoryOpen;
+    public bool IsArtifactPanelOpen => isArtifactPanelOpen;
 
     public void SwitchToInventory()
     {
-        if (isEquipmentOpen)
-        {
-            CloseEquipment();
-        }
-
-        if (!isInventoryOpen)
-        {
-            isInventoryOpen = true;
-            InventoryMenu.SetActive(true);
-        }
-
+        CloseAllPanels();
+        isInventoryOpen = true;
+        InventoryMenu.SetActive(true);
         UpdateButtonVisibility();
         Debug.Log("Switched to Inventory");
     }
 
     public void SwitchToEquipment()
     {
-        if (isInventoryOpen)
-        {
-            CloseInventory();
-        }
-
-        if (!isEquipmentOpen)
-        {
-            isEquipmentOpen = true;
-            EquipmentMenu.SetActive(true);
-        }
-
+        CloseAllPanels();
+        isEquipmentOpen = true;
+        EquipmentMenu.SetActive(true);
         UpdateButtonVisibility();
         Debug.Log("Switched to Equipment");
     }
 
+    public void SwitchToArtifactPanel()
+    {
+        CloseAllPanels();
+        isArtifactPanelOpen = true;
+        ArtifactPanel.SetActive(true);
+        UpdateButtonVisibility();
+        Debug.Log("Switched to Artifact Panel");
+    }
+
     public void ToggleInventory()
     {
-        if (isEquipmentOpen)
+        if (isInventoryOpen)
         {
-            CloseEquipment();
+            CloseInventory();
+        }
+        else
+        {
+            CloseAllPanels();
+            isInventoryOpen = true;
+            InventoryMenu.SetActive(true);
         }
 
-        isInventoryOpen = !isInventoryOpen;
-        InventoryMenu.SetActive(isInventoryOpen);
         UpdateButtonVisibility();
         Debug.Log("Inventory state changed: " + (isInventoryOpen ? "Opened" : "Closed"));
     }
 
     public void ToggleEquipment()
     {
-        if (isInventoryOpen)
+        if (isEquipmentOpen)
         {
-            CloseInventory();
+            CloseEquipment();
+        }
+        else
+        {
+            CloseAllPanels();
+            isEquipmentOpen = true;
+            EquipmentMenu.SetActive(true);
         }
 
-        isEquipmentOpen = !isEquipmentOpen;
-        EquipmentMenu.SetActive(isEquipmentOpen);
         UpdateButtonVisibility();
         Debug.Log("Equipment state changed: " + (isEquipmentOpen ? "Opened" : "Closed"));
+    }
+
+    public void ToggleArtifactPanel()
+    {
+        if (isArtifactPanelOpen)
+        {
+            CloseArtifactPanel();
+        }
+        else
+        {
+            CloseAllPanels();
+            isArtifactPanelOpen = true;
+            ArtifactPanel.SetActive(true);
+        }
+
+        UpdateButtonVisibility();
+        Debug.Log("Artifact Panel state changed: " + (isArtifactPanelOpen ? "Opened" : "Closed"));
     }
 
     public void CloseInventory()
@@ -94,11 +117,27 @@ public class InventoryManager : MonoBehaviour
         Debug.Log("Equipment closed");
     }
 
+    public void CloseArtifactPanel()
+    {
+        isArtifactPanelOpen = false;
+        ArtifactPanel.SetActive(false);
+        UpdateButtonVisibility();
+        Debug.Log("Artifact Panel closed");
+    }
+
+    private void CloseAllPanels()
+    {
+        CloseInventory();
+        CloseEquipment();
+        CloseArtifactPanel();
+    }
+
     private void UpdateButtonVisibility()
     {
-        bool shouldShowButtons = isInventoryOpen || isEquipmentOpen;
+        bool shouldShowButtons = isInventoryOpen || isEquipmentOpen || isArtifactPanelOpen;
         EquipmentButton.SetActive(shouldShowButtons);
         InventoryButton.SetActive(shouldShowButtons);
+        ArtifactButton.SetActive(shouldShowButtons);
     }
 
     public bool UseItem(string itemName)
@@ -146,7 +185,18 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        else
+        else if (itemType == ItemType.artifact)  // ?? Nowe sprawdzenie dla artefaktów
+        {
+            for (int i = 0; i < artifactSlot.Length; i++)  // Zak³adamy, ¿e masz tablicê artifactSlot[]
+            {
+                if (!artifactSlot[i].isFull || artifactSlot[i].quantity == 0)
+                {
+                    int leftOverItems = artifactSlot[i].AddArtifact(itemName, quantity, itemSprite, itemDescription, itemType);
+                    return leftOverItems;
+                }
+            }
+        }
+        else  // Dla ekwipunku (zbroja, broñ itp.)
         {
             for (int i = 0; i < equipmentSlot.Length; i++)
             {
@@ -158,8 +208,9 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        return quantity;
+        return quantity; // Jeœli nie by³o miejsca, zwraca pozosta³¹ iloœæ
     }
+
 
     public void DeselectAllSlots()
     {
@@ -192,6 +243,7 @@ public class InventoryManager : MonoBehaviour
         hand,
         amulet,
         ring,
+        artifact,
         none
     };
 }
