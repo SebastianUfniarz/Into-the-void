@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class LootBag : MonoBehaviour
 {
-    public List<ItemSo> lootList = new List<ItemSo>();  
-   
+    public List<ItemSo> lootList = new List<ItemSo>();
+    public List<EquipmentSO> equipList = new List<EquipmentSO>();
+
     public List<ItemSo> GetDroppedItems()
     {
         List<ItemSo> possibleItems = new List<ItemSo>();
@@ -20,15 +21,14 @@ public class LootBag : MonoBehaviour
 
         return possibleItems;
     }
-
     public void DropLoot(Vector3 spawnPosition)
     {
         List<ItemSo> droppedItems = GetDroppedItems();
         if (droppedItems != null && droppedItems.Count > 0)
-        {           
+        {
             foreach (ItemSo item in droppedItems)
-            {              
-                GameObject lootGameObject = new GameObject(item.itemName);  
+            {
+                GameObject lootGameObject = new GameObject(item.itemName);
 
                 SpriteRenderer spriteRenderer = lootGameObject.AddComponent<SpriteRenderer>();
                 spriteRenderer.sprite = item.sprite;
@@ -40,8 +40,9 @@ public class LootBag : MonoBehaviour
                 lootGameObject.transform.position = new Vector3(spawnPosition.x, spawnPosition.y + 2, spawnPosition.z);
 
                 Item itemComponent = lootGameObject.AddComponent<Item>();
-                itemComponent.SetItem(item);  
+                itemComponent.SetItem(item);
             }
+            
         }
     }
 }

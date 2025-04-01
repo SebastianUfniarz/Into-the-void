@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   itemName: Axe
-  statToChange: 1
-  amountToChangeStat: 5
+  statToChange: 0
+  amountToChangeStat: 0
   sprite: {fileID: 1449178262, guid: 4fade23df1e6aa24cb3099e00951c8f7, type: 3}
   type: 7
   attributeToChange: 0

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c261e2a049c66864e89ec915d860fc9e, type: 3}
-  m_Name: Axe7
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  itemName: Axe7
-  attack: 0
+  itemName: Axe
+  attack: 10
   defense: 10
   agility: 0
   intelligence: 0

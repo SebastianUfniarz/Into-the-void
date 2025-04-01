@@ -15,10 +15,10 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Sprite emptySprite;
     public InventoryManager.ItemType itemType;
 
-    [SerializeField] private GameObject itemInfoPanel;      
-    [SerializeField] private TMP_Text itemNameText;        
-    [SerializeField] private TMP_Text itemDescriptionText;  
-    [SerializeField] private Image itemIconImage;          
+    [SerializeField] private GameObject itemInfoPanel;
+    [SerializeField] private TMP_Text itemNameText;
+    [SerializeField] private TMP_Text itemDescriptionText;
+    [SerializeField] private Image itemIconImage;
 
     [SerializeField] private Image itemImage;
 
@@ -30,7 +30,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private InventoryManager inventoryManager;
     private EquipmentSOLibrary equipmentSOLibrary;
 
-    private bool isMouseInside = false;  
+    private bool isMouseInside = false;
 
     private void Awake()
     {
@@ -40,7 +40,6 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void OnDisable()
     {
-        // Jeœli obiekt jest wy³¹czany, traktujemy to jakby kursor opuœci³ obiekt
         if (isMouseInside)
         {
             OnPointerExit(null);
@@ -50,7 +49,6 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void OnEnable()
     {
-        // Po w³¹czeniu obiektu, sprawdzamy, czy kursor nadal jest nad obiektem
         if (isMouseInside && isFull)
         {
             OnPointerEnter(null);
@@ -61,7 +59,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (isFull && inventoryManager.isEquipmentOpen)
         {
-            itemNameText.text = itemName;            
+            itemNameText.text = itemName;
 
             itemInfoPanel.SetActive(true);
 
@@ -76,10 +74,10 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
             RectTransform rectTransform = itemInfoPanel.GetComponent<RectTransform>();
             RectTransform slotRectTransform = GetComponent<RectTransform>();
-            Vector3 newPosition = slotRectTransform.position + new Vector3(-slotRectTransform.rect.width - 150, -110, 0); 
+            Vector3 newPosition = slotRectTransform.position + new Vector3(-slotRectTransform.rect.width - 150, -110, 0);
             rectTransform.position = newPosition;
 
-            isMouseInside = true;  
+            isMouseInside = true;
         }
         else
         {
@@ -90,7 +88,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void OnPointerExit(PointerEventData eventData)
     {
         itemInfoPanel.SetActive(false);
-        isMouseInside = false;  
+        isMouseInside = false;
     }
 
 
@@ -110,7 +108,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         this.quantity = 1;
         isFull = true;
 
-        return 0; // Nie ma pozosta³ej iloœci do zwrócenia
+        return 0;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -149,7 +147,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
         else
         {
-            
+
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             thisItemSelected = true;
@@ -198,12 +196,12 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (quantity <= 0 || string.IsNullOrEmpty(itemName) || itemSprite == null)
         {
             Debug.LogWarning("Slot is empty. No item to drop.");
-            return; 
+            return;
         }
 
         GameObject itemToDrop = new GameObject(itemName);
         Item newItem = itemToDrop.AddComponent<Item>();
-        newItem.quantity = 1; 
+        newItem.quantity = 1;
         newItem.itemName = itemName;
         newItem.sprite = itemSprite;
         newItem.itemDescription = itemDescription;

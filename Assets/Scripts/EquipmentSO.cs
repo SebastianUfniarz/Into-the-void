@@ -4,13 +4,13 @@ using UnityEngine;
 public class EquipmentSO : ScriptableObject
 {
     public string itemName;
-    public int attack, defense, agility, intelligence;
+    public int attack, defense, mana;
     [SerializeField] private Sprite itemSprite;
 
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(attack, defense, agility, intelligence, itemSprite);
+            PreviewEquipmentStats(attack, defense, mana);
     }
 
     public void EquipItem()
@@ -18,9 +18,7 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.attack += attack;
         playerStats.defense += defense;
-        playerStats.agility += agility;
-        playerStats.intelligence += intelligence;
-
+        playerStats.mana += mana;
         playerStats.UpdateEquipmentStats();
     }
     public void UnEquipItem()
@@ -28,9 +26,7 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.attack -= attack;
         playerStats.defense -= defense;
-        playerStats.agility -= agility;
-        playerStats.intelligence -= intelligence;
-
+        playerStats.mana -= mana;
         playerStats.UpdateEquipmentStats();
     }
 }
