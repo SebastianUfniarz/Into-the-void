@@ -290,5 +290,7 @@ public class PlayerController : MonoBehaviour
 
             damageable.Hit(10, knockback);
         }
+        int damage = Random.Range(5, 15);
+        damageable.Hit(damage, Vector2.right * 3f);
     }
 }

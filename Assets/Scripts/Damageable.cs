@@ -11,18 +11,24 @@ public class Damageable : MonoBehaviour
     public UnityEvent<int, int> healthChanged;
     public UnityEvent<GameObject, int, string> damageOverTimeApplied; 
 
-    [SerializeField] private int _maxHealth = 100; // Maksymalne zdrowie
-    [SerializeField] private int _health = 100;    // Aktualne zdrowie
-    private float alpha = 1f;                      // Poziom przezroczystoœci podczas nietykalnoœci
-    private bool _isAlive = true;                  // Czy obiekt ¿yje
-    public bool isInvincible = false;              // Czy obiekt jest nietykalny
-    private float timeSinceHit = 0;                // Czas od ostatniego trafienia
-    public float invincibilityTime = 3f;           // Czas trwania nietykalnoœci po otrzymaniu obra¿eñ
-
+    [SerializeField] private int _maxHealth = 100;  // Maksymalne zdrowie
+    [SerializeField] private int _health = 100;     // Aktualne zdrowie
+    [SerializeField] private int _maxMana = 100;    // Maksymalne zdrowie
+    [SerializeField] private int _mana = 100;       // Aktualne zdrowie
+    private float alpha = 1f;                       // Poziom przezroczystoœci podczas nietykalnoœci
+    private bool _isAlive = true;                   // Czy obiekt ¿yje
+    public bool isInvincible = false;               // Czy obiekt jest nietykalny
+    private float timeSinceHit = 0;                 // Czas od ostatniego trafienia
+    public float invincibilityTime = 3f;            // Czas trwania nietykalnoœci po otrzymaniu obra¿eñ
+    public int baseCriticalChance = 4;              // 4% bazowej szansy na krytyka (jak w Terrarii)
+    public float criticalMultiplier = 2f;           // Mno¿nik obra¿eñ krytycznych (x2)
     private Animator animator;
     private Rigidbody2D rb;
     private Renderer rend;
+    private PlayerStats playerstats;
     private Color originalColor;
+
+
 
     public int Maxhealth
     {
@@ -40,7 +46,22 @@ public class Damageable : MonoBehaviour
             if (_health <= 0) isAlive = false;
         }
     }
-  
+    public int Maxmana
+    {
+        get { return _maxMana; }
+        private set { _maxMana = value; }
+    }
+
+    public int Mana
+    {
+        get { return _mana; }
+        private set
+        {
+            _mana = value;
+            healthChanged?.Invoke(_mana, Maxmana);
+        }
+    }
+
     public bool LockVelocity
     {
         get { return animator.GetBool(AnimationStrings.lockVelocity); }
@@ -72,6 +93,7 @@ public class Damageable : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<Renderer>();
+        playerstats = FindObjectOfType<PlayerStats>();
         originalColor = rend.material.color;
     }
 
@@ -92,7 +114,7 @@ public class Damageable : MonoBehaviour
         {
             if (target != null && target.isAlive)
             {
-                target.Hit(damagePerTick, Vector2.zero); // Zadaj obra¿enia
+                target.Hit(damagePerTick, Vector2.zero);
 
                 // Wywo³anie eventu dla obra¿eñ w czasie
                 damageOverTimeApplied?.Invoke(target.gameObject, damagePerTick, damageType); // Wywo³ujemy event obra¿eñ w czasie
@@ -103,18 +125,37 @@ public class Damageable : MonoBehaviour
         }
     }
 
+    public void UseMana(int amount)
+    {
+        Damageable damageable = GetComponent<Damageable>();
+        if (damageable != null && damageable.Mana >= amount)
+        {
+            damageable.Mana -= amount;
+            Debug.Log($"U¿yto {amount} many. Pozosta³o: {damageable.Mana}/{damageable.Maxmana}");
+        }
+    }
 
     public bool Hit(int damage, Vector2 knockback)
     {
         if (isAlive && !isInvincible)
         {
-            Health -= damage;
-            
+            bool isCritical = Random.Range(0f, 100f) < baseCriticalChance;
+            int finalDamage = damage;
+
+            if (isCritical)
+            {
+                finalDamage = Mathf.RoundToInt(damage * criticalMultiplier);
+                Debug.Log($"KRYTYK! Zadano {finalDamage} obra¿eñ (bazowo: {damage})");
+            }
+
+            int damageAfterDefense = Mathf.Max(finalDamage - playerstats.defense, 1);
+            Debug.Log($"Obra¿enia: {finalDamage} -> Po redukcji (defense {playerstats.defense}): {damageAfterDefense}");
+
+            Health -= damageAfterDefense;
             animator.SetTrigger(AnimationStrings.hitTrigger);
-            
-            damagableHit?.Invoke(damage, knockback);
-            CharacterEvents.characterDamaged.Invoke(gameObject, damage);           
-            
+            damagableHit?.Invoke(damageAfterDefense, knockback);
+            CharacterEvents.characterDamaged.Invoke(gameObject, damageAfterDefense);
+
             return true;
         }
         return false;
@@ -163,7 +204,7 @@ public class Damageable : MonoBehaviour
     public void IncreaseMaxHealth(int additionalHealth)
     {
         Maxhealth += additionalHealth;
-        Health = Mathf.Min(Health, Maxhealth);  // Zapewnia, ¿e Health nie przekroczy nowego Maxhealth
+        Health = Mathf.Min(Health, Maxhealth);
 
         // Wywo³ujemy healthChanged, aby zaktualizowaæ maksymalne zdrowie w UI
         healthChanged.Invoke(Health, Maxhealth);

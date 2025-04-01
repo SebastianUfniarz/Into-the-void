@@ -1,19 +1,21 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int attack, defense, agility, intelligence;
+    public int attack, defense, mana;
 
-    [SerializeField] private TMP_Text attackText, defenseText, agilityText, intelligenceText;
-
-    [SerializeField] private TMP_Text attackPreText, defensePreText, agilityPreText, intelligencePreText;
-    [SerializeField] private Image previewImage;
-    [SerializeField] private GameObject selectedItemStats, selectedItemImage;
+    [SerializeField] private TMP_Text attackText, defenseText, manaText;
+    [SerializeField] private TMP_Text attackPreText, defensePreText;
+    [SerializeField] private TMP_Text attackInfoPanel, defenseInfoPanel;
+    [SerializeField] private GameObject attackLabel, defenseLabel;
+    private PlayerController playerController;
+    private Damageable damageable;
 
     private void Start()
     {
+        playerController = GetComponent<PlayerController>();
+        damageable = GetComponent<Damageable>();
         UpdateEquipmentStats();
     }
 
@@ -21,25 +23,32 @@ public class PlayerStats : MonoBehaviour
     {
         attackText.text = attack.ToString();
         defenseText.text = defense.ToString();
-        agilityText.text = agility.ToString();
-        intelligenceText.text = intelligence.ToString();
+        manaText.text = mana.ToString();
+
     }
 
-    public void PreviewEquipmentStats(int attack, int defense, int agility, int intelligence, Sprite itemSprite)
+    public void PreviewEquipmentStats(int attack, int defense, int mana)
     {
-        attackPreText.text = attack.ToString();
-        defensePreText.text = defense.ToString();
-        agilityPreText.text = agility.ToString();
-        intelligencePreText.text = intelligence.ToString();
-        previewImage.sprite = itemSprite;
-
-        selectedItemImage.SetActive(true);
-        selectedItemStats.SetActive(true);
-
+        if (attack != 0)
+        {
+            attackPreText.text = attack.ToString();
+            attackLabel.SetActive(true);
+        }
+        else
+        {
+            attackInfoPanel.text = "";
+            attackLabel.SetActive(false);
+        }
+        if (defense != 0)
+        {
+            defensePreText.text = defense.ToString();
+            defenseLabel.SetActive(true);
+        }
+        else
+        {
+            defenseInfoPanel.text = "";
+            defenseLabel.SetActive(false);
+        }
     }
-    public void TurnOffPreviewStats()
-    {
-        selectedItemImage.SetActive(false);
-        selectedItemStats.SetActive(false);
-    }
+
 }

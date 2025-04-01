@@ -29,7 +29,6 @@ public class InventoryManager : MonoBehaviour
         isInventoryOpen = true;
         InventoryMenu.SetActive(true);
         UpdateButtonVisibility();
-        Debug.Log("Switched to Inventory");
     }
 
     public void SwitchToEquipment()
@@ -38,7 +37,6 @@ public class InventoryManager : MonoBehaviour
         isEquipmentOpen = true;
         EquipmentMenu.SetActive(true);
         UpdateButtonVisibility();
-        Debug.Log("Switched to Equipment");
     }
 
     public void SwitchToArtifactPanel()
@@ -47,7 +45,6 @@ public class InventoryManager : MonoBehaviour
         isArtifactPanelOpen = true;
         ArtifactPanel.SetActive(true);
         UpdateButtonVisibility();
-        Debug.Log("Switched to Artifact Panel");
     }
 
     public void ToggleInventory()
@@ -64,7 +61,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         UpdateButtonVisibility();
-        Debug.Log("Inventory state changed: " + (isInventoryOpen ? "Opened" : "Closed"));
     }
 
     public void ToggleEquipment()
@@ -81,7 +77,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         UpdateButtonVisibility();
-        Debug.Log("Equipment state changed: " + (isEquipmentOpen ? "Opened" : "Closed"));
+
     }
 
     public void ToggleArtifactPanel()
@@ -98,7 +94,6 @@ public class InventoryManager : MonoBehaviour
         }
 
         UpdateButtonVisibility();
-        Debug.Log("Artifact Panel state changed: " + (isArtifactPanelOpen ? "Opened" : "Closed"));
     }
 
     public void CloseInventory()
@@ -106,7 +101,6 @@ public class InventoryManager : MonoBehaviour
         isInventoryOpen = false;
         InventoryMenu.SetActive(false);
         UpdateButtonVisibility();
-        Debug.Log("Inventory closed");
     }
 
     public void CloseEquipment()
@@ -114,7 +108,6 @@ public class InventoryManager : MonoBehaviour
         isEquipmentOpen = false;
         EquipmentMenu.SetActive(false);
         UpdateButtonVisibility();
-        Debug.Log("Equipment closed");
     }
 
     public void CloseArtifactPanel()
@@ -122,7 +115,6 @@ public class InventoryManager : MonoBehaviour
         isArtifactPanelOpen = false;
         ArtifactPanel.SetActive(false);
         UpdateButtonVisibility();
-        Debug.Log("Artifact Panel closed");
     }
 
     private void CloseAllPanels()

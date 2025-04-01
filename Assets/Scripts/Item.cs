@@ -17,22 +17,21 @@ public class Item : MonoBehaviour
     {
         this.itemName = itemSo.itemName;
         this.sprite = itemSo.sprite;
-        this.itemDescription = "Opis przedmiotu: " + itemSo.itemName;  // Mo¿esz dostosowaæ opis
+        this.itemDescription = "Opis przedmiotu: " + itemSo.itemName;
         this.itemType = itemSo.type;
-        this.quantity = 1; // Zak³adaj¹c, ¿e przedmioty maj¹ zawsze iloœæ 1 w lootbagu (mo¿esz to zmieniæ)
+        this.quantity = 1; // Zak³adaj¹c, ¿e przedmioty maj¹ zawsze iloœæ 1 w lootbagu
     }
 
     // Ustawienie danych przedmiotu z ItemSo
     public void SetItem(ItemSo item)
     {
-        itemSo = item;  // Zapisujemy ItemSo w polu
+        itemSo = item;
 
-        // Ustawiamy w³aœciwoœci na podstawie ItemSo
         this.itemName = item.itemName;
         this.sprite = item.sprite;
-        this.itemDescription = "Opis przedmiotu: " + item.itemName;  // Mo¿esz dostosowaæ opis
+        this.itemDescription = "Opis przedmiotu: " + item.itemName;
         this.itemType = item.type;
-        this.quantity = 1; // Zak³adaj¹c, ¿e przedmioty maj¹ zawsze iloœæ 1 w lootbagu (mo¿esz to zmieniæ)
+        this.quantity = 1; 
     }
 
     private void Awake()
