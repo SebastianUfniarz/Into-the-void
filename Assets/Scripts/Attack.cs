@@ -1,20 +1,26 @@
 using UnityEngine;
+
 public class Attack : MonoBehaviour
 {
-    public int attackDamage = 10;
     public Vector2 knockback = Vector2.zero;
+    private ICharacterStats attackerStats;
+
+    private void Awake()
+    {
+        attackerStats = GetComponent<ICharacterStats>() ?? GetComponentInParent<ICharacterStats>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {      
-        Damageable damageable = collision.GetComponent<Damageable>();  
+    {
+        var damageable = collision.GetComponent<Damageable>();
+        if (damageable == null) return;
 
-        if (damageable != null) 
+        int damage = attackerStats?.Attack ?? 10;
+        Vector2 direction = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);
+
+        if (damageable.Hit(damage, direction))
         {
-            Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);       
-            bool gotHit = damageable.Hit(attackDamage, deliveredKnockback);            
-            if (gotHit) Debug.Log(collision.name + " hit for " + attackDamage);
+            Debug.Log($"{collision.name} hit for {damage} damage");
         }
     }
 }
-
-

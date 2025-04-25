@@ -288,9 +288,6 @@ public class PlayerController : MonoBehaviour
 
             Vector2 knockback = new Vector2(knockbackDirection.x * knockbackForceX, rb.velocity.y);
 
-            damageable.Hit(10, knockback);
         }
-        int damage = Random.Range(5, 15);
-        damageable.Hit(damage, Vector2.right * 3f);
     }
 }

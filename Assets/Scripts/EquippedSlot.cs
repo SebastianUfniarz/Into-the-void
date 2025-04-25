@@ -9,7 +9,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
 
     [SerializeField] private Image slotImage;
     [SerializeField] private TMP_Text slotName;
-
     [SerializeField] private ItemType itemType;
     private Sprite itemSprite;
     private string itemName;
@@ -33,6 +32,13 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         equipmentSOLibrary = GameObject.Find("InventoryCanvas").GetComponent<EquipmentSOLibrary>();
     }
+
+    public string ItemName
+    {
+        get { return itemName; }
+        set { itemName = value; }
+    }
+
     private void OnDisable()
     {
         if (isMouseInside)
@@ -55,7 +61,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
         if (isFull && inventoryManager.isEquipmentOpen)
         {
             itemNameText.text = itemName;
-
             itemInfoPanel.SetActive(true);
 
             for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
@@ -72,19 +77,16 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
             Vector3 newPosition = slotRectTransform.position + new Vector3(-slotRectTransform.rect.width - 150, -110, 0);
             rectTransform.position = newPosition;
 
-            isMouseInside = true;  
-        }
-        else
-        {
-            itemInfoPanel.SetActive(false);
+            isMouseInside = true;
         }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         itemInfoPanel.SetActive(false);
-        isMouseInside = false; 
+        isMouseInside = false;
     }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
@@ -135,7 +137,9 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
 
         this.itemSprite = itemSprite;
         slotImage.sprite = itemSprite;
-        slotName.enabled = false;
+
+        // Ca³kowicie ukryj slotName gdy przedmiot jest za³o¿ony
+        slotName.gameObject.SetActive(false);
 
         this.itemName = itemName;
         this.itemDescription = itemDescription;
@@ -150,6 +154,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
 
         slotInUse = true;
         isFull = true;
+        inventoryManager.OnEquipmentChanged();
     }
 
     private void UnEquipGear()
@@ -187,6 +192,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
 
             ClearSlot();
         }
+        inventoryManager.OnEquipmentChanged();
     }
 
 
@@ -199,9 +205,25 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
         this.itemDescription = string.Empty;
 
         slotImage.sprite = emptySprite;
-        slotName.enabled = true; 
-        selectedShader.SetActive(false); 
 
+        // Przywróæ domyœlny tekst slotu
+        if (itemType == ItemType.ring)
+        {
+            slotName.text = "Finger";
+        }
+        else if (itemType == ItemType.amulet)
+        {
+            slotName.text = "Neck";
+        }
+        else
+        {
+            slotName.text = char.ToUpper(itemType.ToString()[0]) + itemType.ToString().Substring(1);
+        }
+
+        // Ponownie aktywuj slotName
+        slotName.gameObject.SetActive(true);
+
+        selectedShader.SetActive(false);
         slotInUse = false;
         isFull = false;
         thisItemSelected = false;

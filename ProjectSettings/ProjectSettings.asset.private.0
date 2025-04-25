@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: fb7a7a27cbe09d440a29939394764a11
+  productGUID: b72080c39372ffb438e4522c760adffc
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: "Platform\xF3wka In\u017Cynierowie (1)"
+  productName: "Platform\xF3wka In\u017Cynierowie"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.12156863, g: 0.12156863, b: 0.1254902, a: 1}
@@ -578,14 +578,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: "Platform\xF3wka In\u017Cynierowie (1)"
+  metroPackageName: "Platform\xF3wka In\u017Cynierowie"
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: "Platform\xF3wka In\u017Cynierowie (1)"
+  metroApplicationDescription: "Platform\xF3wka In\u017Cynierowie"
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0

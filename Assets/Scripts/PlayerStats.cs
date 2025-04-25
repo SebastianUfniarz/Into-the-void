@@ -1,21 +1,25 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, ICharacterStats
 {
-    public int attack, defense, mana;
+    public int Attack => attack;
+    public int Defense => defense;
+
+    public int attack;
+    public int defense;
+    public int mana;
+    public float criticalMultiplier = 2f;
+    public int baseCriticalChance = 4;
 
     [SerializeField] private TMP_Text attackText, defenseText, manaText;
     [SerializeField] private TMP_Text attackPreText, defensePreText;
     [SerializeField] private TMP_Text attackInfoPanel, defenseInfoPanel;
     [SerializeField] private GameObject attackLabel, defenseLabel;
-    private PlayerController playerController;
-    private Damageable damageable;
+
 
     private void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        damageable = GetComponent<Damageable>();
         UpdateEquipmentStats();
     }
 

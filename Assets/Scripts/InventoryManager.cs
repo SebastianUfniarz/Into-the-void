@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
     public EquippedSlot[] equippedSlot;
     public ItemSo[] itemSOs;
     public ArtifactSlot[] artifactSlot;
+    public ItemSet[] itemSets; 
 
     public bool IsEquipmentOpen => isEquipmentOpen;
     public bool IsInventoryOpen => isInventoryOpen;
@@ -238,4 +239,47 @@ public class InventoryManager : MonoBehaviour
         artifact,
         none
     };
+
+    public void CheckItemSets()
+    {
+        foreach (ItemSet set in itemSets)
+        {
+            int equippedCount = 0;
+
+            foreach (EquipmentSO requiredItem in set.requiredEquipment)
+            {
+                // Sprawdzamy czy przedmiot jest za³o¿ony
+                foreach (EquippedSlot slot in equippedSlot)
+                {
+                    if (slot.ItemName == requiredItem.itemName && slot.slotInUse)
+                    {
+                        equippedCount++;
+                        break;
+                    }
+                }
+            }
+
+            // Jeœli mamy wszystkie wymagane przedmioty
+            if (equippedCount == set.requiredEquipment.Length && !set.isActive)
+            {
+                PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+                playerStats.defense += set.armorBonus;
+                playerStats.UpdateEquipmentStats();
+                set.isActive = true;
+                Debug.Log($"Aktywowano set {set.setName} - +{set.armorBonus} armor!");
+            }
+            else if (equippedCount < set.requiredEquipment.Length && set.isActive)
+            {
+                PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
+                playerStats.defense -= set.armorBonus;
+                playerStats.UpdateEquipmentStats();
+                set.isActive = false;
+                Debug.Log($"Dezaktywowano set {set.setName}");
+            }
+        }
+    }
+    public void OnEquipmentChanged()
+    {
+        CheckItemSets();
+    }
 }
