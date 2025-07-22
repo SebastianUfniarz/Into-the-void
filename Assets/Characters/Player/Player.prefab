@@ -14,10 +14,12 @@ GameObject:
   - component: {fileID: 1807633405190709709}
   - component: {fileID: 6907513897675656071}
   - component: {fileID: 8604184650867851433}
-  - component: {fileID: 1165049330287023011}
-  - component: {fileID: 4979334849541166188}
-  - component: {fileID: 8673415883778810878}
   - component: {fileID: 7681057390559811158}
+  - component: {fileID: 1165049330287023011}
+  - component: {fileID: 8673415883778810878}
+  - component: {fileID: 4979334849541166188}
+  - component: {fileID: 7275417201053911518}
+  - component: {fileID: 6765705195354323106}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -330,6 +332,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7681057390559811158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966489709520391784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfe5bf2227392547ac446cda9264b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  keys: 0
 --- !u!114 &1165049330287023011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +370,50 @@ MonoBehaviour:
   maxJumpTime: 1
   jumpHoldForce: 30
   jumpCutMultiplier: 0.1
+--- !u!114 &8673415883778810878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966489709520391784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab5d3bb1f3f7044bb4066517803fcad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagableHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1165049330287023011}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnHit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  manaChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  damageOverTimeApplied:
+    m_PersistentCalls:
+      m_Calls: []
+  _maxHealth: 500
+  _health: 500
+  _maxMana: 100
+  _mana: 100
+  isInvincible: 0
+  invincibilityTime: 2
+  baseCriticalChance: 4
+  criticalMultiplier: 2
 --- !u!114 &4979334849541166188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +446,7 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 1
   _isOnCeiling: 1
---- !u!114 &8673415883778810878
+--- !u!114 &7275417201053911518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,39 +455,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 966489709520391784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bab5d3bb1f3f7044bb4066517803fcad, type: 3}
+  m_Script: {fileID: 11500000, guid: f2456503cba6c4041bfc77d88524433e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagableHit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1165049330287023011}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnHit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  healthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  damageOverTimeApplied:
-    m_PersistentCalls:
-      m_Calls: []
-  _maxHealth: 100
-  _health: 50
-  _maxMana: 100
-  _mana: 100
-  isInvincible: 0
-  invincibilityTime: 3
-  baseCriticalChance: 4
-  criticalMultiplier: 2
---- !u!114 &7681057390559811158
+--- !u!114 &6765705195354323106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,11 +467,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 966489709520391784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfe5bf2227392547ac446cda9264b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 45bd1e4142354fc4fb4dd50b6d5c9fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
-  keys: 0
 --- !u!1 &7733603464101239333
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02845a5bdeccee2439d65fe6729b5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 15
   knockback: {x: 5, y: 2}
 --- !u!60 &4733736839658804552
 PolygonCollider2D:

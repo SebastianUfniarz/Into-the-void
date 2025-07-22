@@ -61,7 +61,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         {
             itemImage.sprite = itemSprite;
             quantityText.enabled = true; 
-            quantityText.text = quantity > 1 ? quantity.ToString() : ""; // Poka¿ iloœæ tylko jeœli > 1
+            quantityText.text = quantity > 1 ? quantity.ToString() : "";
         }
         else
         {

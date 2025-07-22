@@ -8,11 +8,10 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
 
     public int attack;
     public int defense;
-    public int mana;
     public float criticalMultiplier = 2f;
     public int baseCriticalChance = 4;
 
-    [SerializeField] private TMP_Text attackText, defenseText, manaText;
+    [SerializeField] private TMP_Text attackText, defenseText;
     [SerializeField] private TMP_Text attackPreText, defensePreText;
     [SerializeField] private TMP_Text attackInfoPanel, defenseInfoPanel;
     [SerializeField] private GameObject attackLabel, defenseLabel;
@@ -27,11 +26,10 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     {
         attackText.text = attack.ToString();
         defenseText.text = defense.ToString();
-        manaText.text = mana.ToString();
 
     }
 
-    public void PreviewEquipmentStats(int attack, int defense, int mana)
+    public void PreviewEquipmentStats(int attack, int defense)
     {
         if (attack != 0)
         {

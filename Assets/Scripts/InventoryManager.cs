@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     public EquipmentSlot[] equipmentSlot;
     public EquippedSlot[] equippedSlot;
     public ItemSo[] itemSOs;
-    public ArtifactSlot[] artifactSlot;
+    public EquipmentSlot[] artifactSlot;
     public ItemSet[] itemSets; 
 
     public bool IsEquipmentOpen => isEquipmentOpen;
@@ -178,18 +178,18 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        else if (itemType == ItemType.artifact)  // ?? Nowe sprawdzenie dla artefaktów
+        else if (itemType == ItemType.artifact) 
         {
-            for (int i = 0; i < artifactSlot.Length; i++)  // Zak³adamy, ¿e masz tablicê artifactSlot[]
+            for (int i = 0; i < artifactSlot.Length; i++)
             {
                 if (!artifactSlot[i].isFull || artifactSlot[i].quantity == 0)
                 {
-                    int leftOverItems = artifactSlot[i].AddArtifact(itemName, quantity, itemSprite, itemDescription, itemType);
+                    int leftOverItems = artifactSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, itemType);
                     return leftOverItems;
                 }
             }
         }
-        else  // Dla ekwipunku (zbroja, broñ itp.)
+        else
         {
             for (int i = 0; i < equipmentSlot.Length; i++)
             {
@@ -201,7 +201,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        return quantity; // Jeœli nie by³o miejsca, zwraca pozosta³¹ iloœæ
+        return quantity;
     }
 
 
@@ -248,7 +248,6 @@ public class InventoryManager : MonoBehaviour
 
             foreach (EquipmentSO requiredItem in set.requiredEquipment)
             {
-                // Sprawdzamy czy przedmiot jest za³o¿ony
                 foreach (EquippedSlot slot in equippedSlot)
                 {
                     if (slot.ItemName == requiredItem.itemName && slot.slotInUse)
@@ -259,7 +258,7 @@ public class InventoryManager : MonoBehaviour
                 }
             }
 
-            // Jeœli mamy wszystkie wymagane przedmioty
+
             if (equippedCount == set.requiredEquipment.Length && !set.isActive)
             {
                 PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();

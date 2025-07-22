@@ -1,0 +1,1117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4017226455481335467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6327898747980485610}
+  m_Layer: 0
+  m_Name: Chests_artifact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6327898747980485610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017226455481335467}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: -5.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7116942969792612609}
+  - {fileID: 8187431941513476894}
+  - {fileID: 1717126771202267440}
+  - {fileID: 6118405267561149469}
+  - {fileID: 2771711167767862081}
+  - {fileID: 2548271450447771441}
+  - {fileID: 2017276662213921211}
+  - {fileID: 9168067525403753543}
+  - {fileID: 7780792812265802298}
+  - {fileID: 4277525015273970631}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1756488183528231527
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_leszy
+      objectReference: {fileID: 0}
+    - target: {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: artifactSprite
+      value: 
+      objectReference: {fileID: -1203952992, guid: 6cf137a2111d498459a8f6395e8c3db0,
+        type: 3}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7680516301435528151}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!1 &1903966826308376827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756488183528231527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7680516301435528151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903966826308376827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef06c73188ecccd45aecbf971d407926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: -1203952992, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: Korona leszego
+  artifactDescription: "Korona Leszego to dziki, \u017Cyj\u0105cy artefakt spleciony
+    z poro\u017Ca, korzeni i mchu, pulsuj\u0105cy moc\u0105 pradawnych duch\xF3w puszczy.
+    Nosz\u0105cy j\u0105 zyskuje w\u0142adz\u0119 nad le\u015Bnymi istotami, burzami
+    i cyklami natury \u2014 ale w zamian musi odda\u0107 cz\u0119\u015B\u0107 w\u0142asnej
+    duszy dzikowi i chaosowi. Je\u015Bli korona trafi w niepowo\u0142ane r\u0119ce,
+    las zaczyna si\u0119 buntowa\u0107, a granica mi\u0119dzy \u015Bwiatem ludzi a
+    pierwotn\u0105 dzicz\u0105 zaczyna zanika\u0107. "
+--- !u!4 &6118405267561149469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1756488183528231527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2842422586561227840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4475804767055785989}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!1 &2701635617017915100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2842422586561227840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4475804767055785989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701635617017915100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bc1c395dba60b4ea68607b8e9baeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 1733363523, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: Smocze jajo
+  artifactDescription: "Smocze Jajo to rzadki, ciep\u0142y w dotyku artefakt, pokryty
+    \u0142uskowat\u0105 skorup\u0105 o metalicznym po\u0142ysku i pulsuj\u0105cym
+    wn\u0119trzu, jakby skrywa\u0142 bij\u0105ce serce. W jego wn\u0119trzu dojrzewa
+    istota o niepoj\u0119tej sile \u2014 smok, kt\xF3ry po wykluciu zwi\u0105\u017Ce
+    si\u0119 z pierwszym, kt\xF3rego uzna za godnego. Wielu marzy, by je zdoby\u0107\u2026
+    ale niewielu rozumie, \u017Ce opieka nad smokiem to nie tylko pot\u0119ga \u2014
+    to odpowiedzialno\u015B\u0107 i gro\u017Aba przebudzenia pradawnej furii. "
+--- !u!4 &7780792812265802298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2842422586561227840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3336261817045397371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_grymuar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &7116942969792612609 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3336261817045397371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3725384305749219901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_worlds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7957395662907244874}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!1 &3584665493968867489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3725384305749219901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7957395662907244874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584665493968867489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2610c36a117cc4ba874053fc8e7200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 200397009, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Uwi\u0119zione nowe \u015Bwiaty"
+  artifactDescription: "Uwi\u0119zione Nowe \u015Awiaty to tajemnicza fiolka, w kt\xF3rej
+    wed\u0142ug legend zakl\u0119to nie narodzon\u0105 jeszcze rzeczywisto\u015B\u0107
+    \u2014 potencjalny \u015Bwiat, czekaj\u0105cy na uwolnienie. Esencja wewn\u0105trz
+    pulsuje jak \u017Cywa, a ka\u017Cdy, kto zbli\u017Cy j\u0105 do serca, s\u0142yszy
+    szept mo\u017Cliwych przysz\u0142o\u015Bci, alternatywnych los\xF3w i dr\xF3g,
+    kt\xF3rych nigdy nie obrano. Uwolnienie jej mocy mo\u017Ce stworzy\u0107 nowe
+    istnienie... albo wymaza\u0107 obecne."
+--- !u!4 &9168067525403753543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3725384305749219901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4402027181603790180
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_kamien_krwi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7848088609973843074}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!1 &4547324361244776440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4402027181603790180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7848088609973843074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547324361244776440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fa796eaa1d739449d4ba59f6726ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 711194916, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Kamie\u0144 zakl\u0119tej krwi "
+  artifactDescription: "Kamie\u0144 zakl\u0119tej krwi to tajemniczy, pulsuj\u0105cy
+    artefakt, kt\xF3ry zawiera esencj\u0119 pradawnej, spaczonej magii ofiarnej. cDawny
+    czarodziej ow\u0142adni\u0119ty jego moc\u0105, popad\u0142 w obsesj\u0119 i rozpocz\u0105\u0142
+    makabryczne eksperymenty, pr\xF3buj\u0105c stworzy\u0107 \u201E\u017Cyw\u0105
+    form\u0119 czystej mocy\u201D.  W wyniku jego szale\u0144czych dzia\u0142a\u0144
+    dosz\u0142o do magicznej katastrofy, kt\xF3ra poch\u0142on\u0119\u0142a ca\u0142\u0105
+    wiosk\u0119 \u2014 zostawiaj\u0105c po niej jedynie popi\xF3\u0142, echa cierpienia
+    i nienazwan\u0105 groz\u0119."
+--- !u!4 &8187431941513476894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4402027181603790180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6302352209412698049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 480367916084640311}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &2017276662213921211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6302352209412698049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6159236533687887197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6302352209412698049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &480367916084640311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6159236533687887197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4d2764b1b82cd4d87fc690f8901eb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 227695412, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Brzemi\u0119 pierwszego w\u0142adcy"
+  artifactDescription: "Brzemi\u0119 Pierwszego W\u0142adcy to staro\u017Cytny pier\u015Bcie\u0144
+    wykuty ze z\u0142ota i zdobiony pojedynczym ametystem. Nale\u017Ca\u0142 do legendarnego
+    za\u0142o\u017Cyciela kr\xF3lestwa, kt\xF3ry zwi\u0105za\u0142 sw\u0105 dusz\u0119
+    z losem ziem, nad kt\xF3rymi panowa\u0142  \u2014 jego moc daje nosz\u0105cemu
+    niezwyk\u0142\u0105 charyzm\u0119 i autorytet, ale te\u017C niesie ci\u0119\u017Car
+    odpowiedzialno\u015Bci i cierpienia ludu. Ka\u017Cdy w\u0142adca, kt\xF3ry go
+    nosi, zaczyna s\u0142ysze\u0107 g\u0142osy przodk\xF3w... i czuje na palcu nie
+    pier\u015Bcie\u0144, lecz \u0142a\u0144cuch."
+--- !u!1001 &6583356853530427210
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_elf_neck
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.4900002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8845967423198288506}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &1717126771202267440 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6583356853530427210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6435849623846417878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6583356853530427210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8845967423198288506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435849623846417878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cceb86de779f441a0aa00734e81360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 1704032301, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Naszyjnik kr\xF3lowej elf\xF3w"
+  artifactDescription: "Naszyjnik Kr\xF3lowej Elf\xF3w to misternie utkany klejnot
+    ze s\u0142onecznego z\u0142ota i \u0142ez porannej rosy,  przekazywany z pokolenia
+    na pokolenie w\u015Br\xF3d elfiej arystokracji.  Skrywa b\u0142ogos\u0142awie\u0144stwo
+    pradawnej kr\xF3lowej, kt\xF3re wzmacnia wi\u0119\u017A z natur\u0105 i pozwala
+    s\u0142ysze\u0107 szept lasu oraz pie\u015Bni gwiazd.  "
+--- !u!1001 &7710062514910412091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_runa
+      objectReference: {fileID: 0}
+    - target: {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: artifactSprite
+      value: 
+      objectReference: {fileID: 730489364, guid: 6cf137a2111d498459a8f6395e8c3db0,
+        type: 3}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4303772377519720250}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &2771711167767862081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7710062514910412091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7562623555039934375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7710062514910412091}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4303772377519720250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562623555039934375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1583758b216c8743988a7d3111121a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 730489364, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Kamie\u0144 runiczny dawnego czarodzieja"
+  artifactDescription: "Kamie\u0144 Runiczny Dawnego Czarodzieja to staro\u017Cytny
+    od\u0142amek obelisku, pokryty migocz\u0105cymi runami, kt\xF3re zmieniaj\u0105
+    si\u0119 pod wp\u0142ywem magii i emocji. Niegdy\u015B nale\u017Ca\u0142 do pot\u0119\u017Cnego
+    arcymaga, kt\xF3ry zapiecz\u0119towa\u0142 w nim fragment w\u0142asnej mocy oraz
+    wspomnienia sprzed Wielkiego Roz\u0142amu. Kamie\u0144 szeptem kusi nowych w\u0142a\u015Bcicieli,
+    obiecuj\u0105c im pot\u0119g\u0119 \u2014 lecz ka\u017Cdy, kto nie zdo\u0142a
+    ujarzmi\u0107 jego woli, ryzykuje utrat\u0119 w\u0142asnej to\u017Csamo\u015Bci. "
+--- !u!1001 &8058623071721230667
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7622469831591379099}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &2548271450447771441 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8058623071721230667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7915509497887726551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8058623071721230667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7622469831591379099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915509497887726551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac93b1079847fe1439b867a38ea4df5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: 1269215029, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: Wspomnienie dawnego imperium
+  artifactDescription: "Wspomnienie Dawnego Imperium to eteryczny artefakt w formie
+    migotliwego kryszta\u0142u lub mg\u0142y, unosz\u0105cej si\u0119 nad ziemi\u0105
+    i pulsuj\u0105cej echem minionej chwa\u0142y.  Zawiera zakl\u0119te obrazy, g\u0142osy
+    i emocje z czas\xF3w, gdy imperium w\u0142ada\u0142o kontynentem \u2014 triumfy,
+    zdrady i upadki zapisane w magicznej pami\u0119ci. Ka\u017Cdy, kto si\u0119 z
+    nim po\u0142\u0105czy, mo\u017Ce ujrze\u0107 przesz\u0142o\u015B\u0107 oczami
+    dawnych bohater\xF3w...  lecz zbyt d\u0142ugie obcowanie grozi zatraceniem w cudzych
+    wspomnieniach."
+--- !u!1001 &8634649291681693117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6327898747980485610}
+    m_Modifications:
+    - target: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chest_quill
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 811627933549561609, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6738611618999397548}
+  m_SourcePrefab: {fileID: 100100000, guid: 9ad7c828b152b074ab719e6ffebcd04c, type: 3}
+--- !u!4 &4277525015273970631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5514866233297823354, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8634649291681693117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8491568741444876065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 147619400309148316, guid: 9ad7c828b152b074ab719e6ffebcd04c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8634649291681693117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6738611618999397548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491568741444876065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba1a87265e31864da4b16c7436262f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artifactSprite: {fileID: -254523398, guid: 6cf137a2111d498459a8f6395e8c3db0, type: 3}
+  artifactUI: {fileID: 0}
+  animator: {fileID: 0}
+  isOpen: 0
+  artifactName: "Pi\xF3ro dawnego czarodzieja"
+  artifactDescription: "Pi\xF3ro Dawnego Czarodzieja to delikatne, lecz magicznie
+    nienaruszalne pi\xF3ro, przez wieki s\u0142u\u017C\u0105ce jako narz\u0119dzie
+    do spisywania zakl\u0119\u0107, kl\u0105tw i proroctw. Pozostawione przez nie\u017Cyj\u0105cego
+    arcymaga, wci\u0105\u017C tchnie resztkami jego pot\u0119gi \u2014 ka\u017Cde
+    s\u0142owo, kt\xF3re nim zapiszesz, mo\u017Ce sta\u0107 si\u0119 rzeczywisto\u015Bci\u0105\u2026
+    lub przekle\u0144stwem. U\u017Cywane nierozwa\u017Cnie, pi\xF3ro nie tylko spe\u0142nia
+    \u017Cyczenia, ale te\u017C zdradza intencje serca w\u0142a\u015Bciciela, czasem
+    daj\u0105c mu to, czego pragnie \u2014 a nie to, czego naprawd\u0119 potrzebuje."

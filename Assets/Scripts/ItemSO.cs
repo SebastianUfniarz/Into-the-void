@@ -22,13 +22,11 @@ public class ItemSo : ScriptableObject
             if (player.Health >= player.Maxhealth)
             {
                 Debug.Log("Zdrowie gracza jest ju¿ maksymalne, przedmiot nie zosta³ u¿yty.");
-                return false; // Nie zu¿ywamy przedmiotu, jeœli zdrowie jest pe³ne
+                return false;
             }
 
-            // Obliczamy iloœæ zdrowia do przywrócenia, aby nie przekroczyæ maksymalnego zdrowia
             int healAmount = Mathf.Min(amountToChangeStat, player.Maxhealth - player.Health);
 
-            // Próbujemy wyleczyæ gracza, jeœli healAmount jest wiêksze od 0
             if (healAmount > 0)
             {
                 player.Heal(healAmount); 

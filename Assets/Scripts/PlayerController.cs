@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float attackMoveSpeed = 0f;
     public float frictionAmount = 0.2f;
     public float knockbackForceX = 15f;
+    public Vector3? nextPosition = null;
 
     public float jumpImpulse = 10f;
     public float maxJumpTime = 0.3f;
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
             inventoryManager = FindObjectOfType<InventoryManager>();
         }
     }
-    
+
     public void BlockInput() => CanReceiveInput = false;
     public void UnblockInput() => CanReceiveInput = true;
     
@@ -152,6 +153,11 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
         
         SetFacingDirection(moveInput);
+        if (nextPosition.HasValue)
+        {
+            transform.position = nextPosition.Value;
+            nextPosition = null;
+        }
     }
 
     private void ApplyFriction()
@@ -251,7 +257,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.started && touchingDirections.isGrounded && CanReceiveInput && !inventoryManager.IsInventoryOpen && !inventoryManager.IsEquipmentOpen)
+        if (context.started 
+            && touchingDirections.isGrounded 
+            && CanReceiveInput 
+            && !inventoryManager.IsInventoryOpen 
+            && !inventoryManager.IsEquipmentOpen
+            && !damageable.isInvincible)
         {
             animator.SetTrigger(AnimationStrings.attackTrigger);
         }

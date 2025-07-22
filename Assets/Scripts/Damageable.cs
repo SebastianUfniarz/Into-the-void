@@ -80,7 +80,7 @@ public class Damageable : MonoBehaviour
     public bool IsAlive
     {
         get => _isAlive;
-        private set
+        internal set
         {
             _isAlive = value;
             animator.SetBool(AnimationStrings.isAlive, value);
@@ -90,9 +90,18 @@ public class Damageable : MonoBehaviour
             {
                 rb.gravityScale = 500;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+            IDeathHandler deathHandler = GetComponent<IDeathHandler>();
+            if (deathHandler != null)
+            {
+                deathHandler.OnDeath();
+            }
+
+
                 var playerInput = GetComponent<PlayerInput>();
                 if (playerInput != null) playerInput.enabled = false;
             }
+
         }
     }
 
@@ -137,7 +146,7 @@ public class Damageable : MonoBehaviour
         }
     }
 
-    public bool Hit(int damage, Vector2 knockback)
+    public bool Hit(int damage, Vector2 knockback, bool ignoreDefense = false)
     {
         if (!IsAlive || isInvincible) return false;
 
@@ -150,18 +159,20 @@ public class Damageable : MonoBehaviour
         else if (playerStats != null)
             defense = playerStats.Defense;
 
-        int damageAfterDefense = Mathf.Max(damage - defense, 1);
+        int damageAfterDefense = ignoreDefense ? finalDamage : Mathf.Max(finalDamage - defense, 1);
+
         Health -= damageAfterDefense;
 
-        Debug.Log($"Damage: {finalDamage} -> After defense ({defense}): {damageAfterDefense}");
-
+        Debug.Log($"Damage: {finalDamage} {(ignoreDefense ? "(ignoring defense)" : $"-> After defense ({defense})")} : {damageAfterDefense}");
 
         animator.SetTrigger(AnimationStrings.hitTrigger);
         damagableHit?.Invoke(damageAfterDefense, knockback);
         CharacterEvents.characterDamaged.Invoke(gameObject, damageAfterDefense);
 
+        EnableInvincibility();
         return true;
     }
+
 
     private void EnableInvincibility()
     {

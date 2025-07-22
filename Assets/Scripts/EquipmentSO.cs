@@ -10,7 +10,7 @@ public class EquipmentSO : ScriptableObject
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(attack, defense, mana);
+            PreviewEquipmentStats(attack, defense);
     }
 
     public void EquipItem()
@@ -18,7 +18,6 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.attack += attack;
         playerStats.defense += defense;
-        playerStats.mana += mana;
         playerStats.UpdateEquipmentStats();
     }
     public void UnEquipItem()
@@ -26,7 +25,6 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.attack -= attack;
         playerStats.defense -= defense;
-        playerStats.mana -= mana;
         playerStats.UpdateEquipmentStats();
     }
 }

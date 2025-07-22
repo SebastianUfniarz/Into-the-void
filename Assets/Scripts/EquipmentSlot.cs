@@ -96,7 +96,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (isFull)
         {
-            return quantity; // Je¿eli slot jest pe³ny, zwróæ pozosta³¹ iloœæ
+            return quantity;
         }
 
         this.itemType = itemType;
@@ -156,7 +156,6 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void EquipGear()
     {
-        // Wyposa¿ przedmiot w odpowiedni slot
         if (itemType == ItemType.head) { headSlot.EquipGear(itemSprite, itemName, itemDescription); }
         if (itemType == ItemType.body) { bodySlot.EquipGear(itemSprite, itemName, itemDescription); }
         if (itemType == ItemType.legs) { legsSlot.EquipGear(itemSprite, itemName, itemDescription); }
@@ -207,17 +206,14 @@ public class EquipmentSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         newItem.itemDescription = itemDescription;
         newItem.itemType = itemType;
 
-        // Dodanie SpriteRenderer do wizualizacji przedmiotu
         SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
         sr.sprite = itemSprite;
         sr.sortingOrder = 5;
         sr.sortingLayerName = "Ground";
 
-        // Dodanie komponentów fizycznych
         itemToDrop.AddComponent<BoxCollider2D>();
         itemToDrop.AddComponent<Rigidbody2D>();
 
-        // Pozycjonowanie obiektu na scenie
         itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(2, 0, 0);
 
         quantity -= 1;

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3469158074409984204}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.39, y: -3.65, z: 0}
+  m_LocalPosition: {x: -4.64, y: -3.79, z: 0}
   m_LocalScale: {x: 1.24, y: 1.37, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 6082882390079595838}
   - component: {fileID: 968925820793460613}
   - component: {fileID: 259038642139941533}
+  - component: {fileID: 658073087410898640}
   m_Layer: 8
   m_Name: DemonSlime
   m_TagString: Enemy
@@ -310,7 +311,7 @@ MonoBehaviour:
   damageOverTimeApplied:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
+  _maxHealth: 10
   _health: 10
   _maxMana: 100
   _mana: 100
@@ -334,9 +335,19 @@ MonoBehaviour:
   maxSpeed: 4
   moveStopSpeed: 0.6
   knockbackForce: 10
+  flipCooldownAfterAttack: 0.3
   attackZone: {fileID: 349333730197858466}
   cliffDetectionZone: {fileID: 0}
   _HasTarget: 0
+  fireballPrefab: {fileID: 1502874025243843922, guid: a2f79ca981579274f93918be257aec06, type: 3}
+  fireballCount: 10
+  fireballSpacing: 5
+  fireballHeightOffset: 25
+  fireballSpawnInterval: 2
+  firewavePrefab: {fileID: 5785839621993674872, guid: eeb532b14602011499bbd3d30654abf7, type: 3}
+  firewaveCountPerSide: 15
+  firewaveSpacing: 1
+  firewaveDelay: 0.1
 --- !u!95 &968925820793460613
 Animator:
   serializedVersion: 5
@@ -390,6 +401,28 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 1
   _isOnCeiling: 1
+--- !u!114 &658073087410898640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118481599856464479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7305a52972d004d8dfe1e25f5f381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootList:
+  - {fileID: 11400000, guid: e619aaec2118c6743bd6e40bb3a57d17, type: 2}
+  - {fileID: 11400000, guid: 367aef9875b322243922b3aec0d3df7b, type: 2}
+  - {fileID: 11400000, guid: 20d7df9c6e5507047a1088e0415ea3a4, type: 2}
+  - {fileID: 11400000, guid: 82d0c3501971f36408180cc060644bbc, type: 2}
+  - {fileID: 11400000, guid: c2829fb060494a54d9006666d17b42db, type: 2}
+  - {fileID: 11400000, guid: 9e78de3e8ce6e7d49addf82566215d2d, type: 2}
+  - {fileID: 11400000, guid: 67b135bfc636bc8469653a08a61d20b9, type: 2}
+  - {fileID: 11400000, guid: b5ce29f0bdf531b40b360eeb72e21fc0, type: 2}
+  equipList: []
 --- !u!1 &6391531323875186252
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +450,7 @@ Transform:
   m_GameObject: {fileID: 6391531323875186252}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.24, y: -3.51, z: 0}
+  m_LocalPosition: {x: -1.67, y: -3.4, z: 0}
   m_LocalScale: {x: 1.24, y: 1.37, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -455,7 +488,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.1627283, y: 1.5952134}
+  m_Offset: {x: 4.4057217, y: 1.6859219}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -466,7 +499,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.4274035, y: 5.5265636}
+  m_Size: {x: 5.913389, y: 5.7079806}
   m_EdgeRadius: 0
 --- !u!114 &349333730197858466
 MonoBehaviour:

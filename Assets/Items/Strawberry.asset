@@ -19,4 +19,4 @@ MonoBehaviour:
   type: 0
   attributeToChange: 0
   amountToChangeAttribute: 0
-  dropChance: 50
+  dropChance: 100

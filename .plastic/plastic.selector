@@ -1,3 +1,4 @@
-rep "Platformówka Inżynierowie@sebastianufniarz3@cloud"
+repository "Cloud Repositories/Platformówka Inżynierowie@7971838493228@cloud"
   path "/"
-    smartbranch "/main"
+    br "/main"
+    co "/main"

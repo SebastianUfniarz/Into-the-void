@@ -4,12 +4,10 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    // Odnoœnik do suwaka paska zdrowia i tekstu z iloœci¹ zdrowia
     public Slider healthSlider;
     public TMP_Text healthBarText;
-    private Damageable playerDamagable; // Komponent Damageable gracza
+    private Damageable playerDamagable;
 
-    // Inicjalizacja odniesienia do komponentu Damageable gracza
     private void Awake()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -24,7 +22,6 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    // Ustawienie pocz¹tkowego paska zdrowia i tekstu na podstawie aktualnego zdrowia gracza
     private void Start()
     {
         UpdateHealthUI(playerDamagable.Health, playerDamagable.Maxhealth);

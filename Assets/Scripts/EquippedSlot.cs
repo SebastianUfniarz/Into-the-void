@@ -138,7 +138,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
         this.itemSprite = itemSprite;
         slotImage.sprite = itemSprite;
 
-        // Ca³kowicie ukryj slotName gdy przedmiot jest za³o¿ony
         slotName.gameObject.SetActive(false);
 
         this.itemName = itemName;
@@ -206,7 +205,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
 
         slotImage.sprite = emptySprite;
 
-        // Przywróæ domyœlny tekst slotu
         if (itemType == ItemType.ring)
         {
             slotName.text = "Finger";
@@ -220,7 +218,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler, IPointerExitHan
             slotName.text = char.ToUpper(itemType.ToString()[0]) + itemType.ToString().Substring(1);
         }
 
-        // Ponownie aktywuj slotName
         slotName.gameObject.SetActive(true);
 
         selectedShader.SetActive(false);

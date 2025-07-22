@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5579820092369457295}
   - component: {fileID: 1572492073541742596}
   - component: {fileID: 320501706707591580}
+  - component: {fileID: 6256408276038927803}
   m_Layer: 8
   m_Name: KnightEnemy
   m_TagString: Enemy
@@ -185,6 +186,9 @@ MonoBehaviour:
   healthChanged:
     m_PersistentCalls:
       m_Calls: []
+  manaChanged:
+    m_PersistentCalls:
+      m_Calls: []
   damageOverTimeApplied:
     m_PersistentCalls:
       m_Calls: []
@@ -212,8 +216,8 @@ MonoBehaviour:
   maxSpeed: 4
   moveStopSpeed: 0.05
   knockbackForce: 10
-  attackZone: {fileID: 1244334892978028111}
-  cliffDetectionZone: {fileID: 1036149592547403001}
+  attackZone: {fileID: 2299222291650424947}
+  cliffDetectionZone: {fileID: 0}
   _HasTarget: 0
 --- !u!114 &1572492073541742596
 MonoBehaviour:
@@ -268,6 +272,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6256408276038927803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2385722168206252663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2582e23cc510dd4f85178a067a5cebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: 10
+  _defense: 5
 --- !u!1 &2556182245864244319
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,8 +295,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6478629101564164990}
-  - component: {fileID: 1036149592547403001}
   - component: {fileID: 3611514394581487861}
+  - component: {fileID: 6824890929232696531}
   m_Layer: 11
   m_Name: CliffDetectionZone
   m_TagString: Untagged
@@ -301,34 +319,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 728829541609372791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1036149592547403001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556182245864244319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d4e1c7b27bae24ca7f220debb53d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noCollidersRemain:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5579820092369457295}
-        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
-        m_MethodName: OnCliffDetected
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  detectedColliders: []
 --- !u!61 &3611514394581487861
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -374,6 +364,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6824890929232696531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556182245864244319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d078bdf26cdc52409dbc9c8335f9026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noCollidersRemain:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5579820092369457295}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: OnCliffDetected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  detectedColliders: []
 --- !u!1 &5256671532332238703
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02845a5bdeccee2439d65fe6729b5477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
   knockback: {x: 5, y: 2}
 --- !u!1 &6125095198862810052
 GameObject:
@@ -488,7 +505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3368272219381772072}
   - component: {fileID: 6099937226926532628}
-  - component: {fileID: 1244334892978028111}
+  - component: {fileID: 2299222291650424947}
   m_Layer: 10
   m_Name: HitboxDetection
   m_TagString: Untagged
@@ -556,7 +573,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.173684, y: 1.6379967}
   m_EdgeRadius: 0
---- !u!114 &1244334892978028111
+--- !u!114 &2299222291650424947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,23 +6,20 @@ public class Item : MonoBehaviour
     [SerializeField] internal string itemName;
     [SerializeField] internal Sprite sprite;
     [SerializeField] internal string itemDescription;
+    
     public InventoryManager.ItemType itemType;
-
     private InventoryManager inventoryManager;
+    private ItemSo itemSo;
 
-    private ItemSo itemSo;  // Przechowuje dane o przedmiocie
-
-    // Dodajemy mo¿liwoœæ inicjalizacji z ItemSo
     public void Initialize(ItemSo itemSo)
     {
         this.itemName = itemSo.itemName;
         this.sprite = itemSo.sprite;
         this.itemDescription = "Opis przedmiotu: " + itemSo.itemName;
         this.itemType = itemSo.type;
-        this.quantity = 1; // Zak³adaj¹c, ¿e przedmioty maj¹ zawsze iloœæ 1 w lootbagu
+        this.quantity = 1;
     }
 
-    // Ustawienie danych przedmiotu z ItemSo
     public void SetItem(ItemSo item)
     {
         itemSo = item;
@@ -43,15 +40,14 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Przedmiot dodany do inwentarza, reszta jest usuwana
             int leftOverItems = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, itemType);
             if (leftOverItems <= 0)
             {
-                Destroy(gameObject);  // Zniszczenie obiektu, jeœli dodano do inwentarza
+                Destroy(gameObject);
             }
             else
             {
-                quantity = leftOverItems;  // Pozostawiamy pozosta³¹ iloœæ
+                quantity = leftOverItems;
             }
         }
     }

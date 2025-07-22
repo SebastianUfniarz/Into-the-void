@@ -22,7 +22,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.1
+        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -50,6 +50,24 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 1.5
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.6
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.7
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -96,6 +114,10 @@ AnimationClip:
       value: {fileID: 21300000, guid: 59da960e906b12f40be3b8d33dbacbcb, type: 3}
     - time: 1.4
       value: {fileID: 21300000, guid: 8426e94dbcee7014a83963bb4a0b6830, type: 3}
+    - time: 1.6
+      value: {fileID: 21300000, guid: 23f9c26738191a04d889faf8c9b083c0, type: 3}
+    - time: 1.7
+      value: {fileID: 21300000, guid: 23f9c26738191a04d889faf8c9b083c0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -141,12 +163,14 @@ AnimationClip:
     - {fileID: 21300000, guid: 36a5f1cf44987484c82a80f0b274bdf6, type: 3}
     - {fileID: 21300000, guid: 59da960e906b12f40be3b8d33dbacbcb, type: 3}
     - {fileID: 21300000, guid: 8426e94dbcee7014a83963bb4a0b6830, type: 3}
+    - {fileID: 21300000, guid: 23f9c26738191a04d889faf8c9b083c0, type: 3}
+    - {fileID: 21300000, guid: 23f9c26738191a04d889faf8c9b083c0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5
+    m_StopTime: 1.8000001
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -167,7 +191,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.1
+        time: 0
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -202,6 +226,24 @@ AnimationClip:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
+      - serializedVersion: 3
+        time: 1.6
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.7
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -216,6 +258,13 @@ AnimationClip:
   m_Events:
   - time: 0.9
     functionName: SpawnFirewaveLine
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.4
+    functionName: EndAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

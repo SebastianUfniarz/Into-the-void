@@ -15,19 +15,18 @@ public class DetectionZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!detectedColliders.Contains(collision)) // Sprawdzenie, czy dany collider nie znajduje siê ju¿ na liœcie
+        if (collision.CompareTag("Player"))
         {
-            detectedColliders.Add(collision); // Dodanie collidera do listy
+            detectedColliders.Add(collision);
         }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        detectedColliders.Remove(collision); // Usuniêcie collidera, który opuœci³ strefê, z listy
-
-        if (detectedColliders.Count <= 0)  // Jeœli po usuniêciu nie ma ju¿ ¿adnych colliderów na liœcie
+        detectedColliders.Remove(collision);
+        if (collision.CompareTag("Player"))
         {
-            
-            noCollidersRemain.Invoke(); // Gdy lista jest pusta , Aktywuje zdarzenie noCollidersRemain.
+            noCollidersRemain.Invoke();
         }
     }
 }

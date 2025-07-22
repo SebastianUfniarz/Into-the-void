@@ -11,7 +11,6 @@ public class GodModePickup : MonoBehaviour
             Damageable damageable = collision.GetComponent<Damageable>();
             if (damageable != null)
             {
-                // damageable.StartGodMode();
                 print("Gracz jest niesmiertelny");
                 gameObject.SetActive(false);
             }

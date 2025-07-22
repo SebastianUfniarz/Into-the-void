@@ -6,24 +6,23 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class Knight : MonoBehaviour
 {
-    public float moveSpeed = 4f;                            // Prêdkoœæ poruszania rycerza
-    public float maxSpeed = 4f;                             // Maksymalna prêdkoœæ rycerza
-    public float moveStopSpeed = 0.6f;                      // Prêdkoœæ zatrzymywania
-    public float knockbackForce = 10f;                      // Si³a knockbacku
+    public float moveSpeed = 4f;                           
+    public float maxSpeed = 4f;                            
+    public float moveStopSpeed = 0.6f;                     
+    public float knockbackForce = 10f;                     
     
-    Rigidbody2D rb;                                         // Odnoœnik do Rigidbody2D rycerza
-    TouchingDirections touchingDirections;                  // Odnoœnik do komponentu wykrywaj¹cego dotkniêcia
-    Animator animator;                                      // Odnoœnik do animatora
-    Damageable damageable;                                  // Odnoœnik do komponentu Damageable
+    Rigidbody2D rb;                                         
+    TouchingDirections touchingDirections;                  
+    Animator animator;                                     
+    Damageable damageable;                                 
     
-    public DetectionZone attackZone;                        // Strefa ataku
-    public DetectionZone cliffDetectionZone;                // Strefa wykrywania klifu
-    public enum WalkableDirection { Right, Left }           // Kierunki poruszania siê
-    private WalkableDirection _walkDirection;               // Kierunek poruszania siê
-    private Vector2 walkDirectionVector = Vector2.right;    // Wektor kierunku poruszania siê
-    public bool _HasTarget = false;                         // Flaga informuj¹ca o posiadaniu celu
+    public DetectionZone attackZone;                       
+    public DetectionZone cliffDetectionZone;               
+    public enum WalkableDirection { Right, Left }           
+    private WalkableDirection _walkDirection;               
+    private Vector2 walkDirectionVector = Vector2.right;    
+    public bool _HasTarget = false;                        
 
-    // W³aœciwoœæ ustawiaj¹ca kierunek poruszania siê i obracaj¹ca postaæ
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
@@ -31,7 +30,6 @@ public class Knight : MonoBehaviour
         {
             if (_walkDirection != value)
             {
-                // Obracanie postaci
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
                 if (value == WalkableDirection.Right)
                 {
@@ -76,7 +74,6 @@ public class Knight : MonoBehaviour
     }
     private void Update()
     {
-        // Sprawdzenie, czy rycerz ma cel w zasiêgu
         HasTarget = attackZone.detectedColliders.Count > 0;
         if (AttackCooldown > 0)
         {
@@ -88,18 +85,15 @@ public class Knight : MonoBehaviour
     {
         if (HasTarget)
         {
-            // Zatrzymywanie rycerza, gdy ma cel
             rb.velocity = Vector2.zero;
         }
         else
         {
-            // Normalne poruszanie, jeœli rycerz nie ma celu
             if (touchingDirections.isGrounded && touchingDirections.isOnWall)
             {
                 FlipDirection();
             }
 
-            // Poruszanie, jeœli nie ma zablokowanej prêdkoœci i mo¿na siê poruszaæ
             if (!damageable.LockVelocity)
             {
                 if (CanMove)
@@ -108,7 +102,6 @@ public class Knight : MonoBehaviour
                 }
                 else
                 {
-                    // Stopniowe zatrzymywanie, jeœli nie mo¿na siê poruszaæ
                     rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, moveStopSpeed), rb.velocity.y);
                 }
             }
@@ -117,7 +110,6 @@ public class Knight : MonoBehaviour
 
     private void FlipDirection()
     {
-        // Nie obracaj postaci, jeœli rycerz atakuje
         if (HasTarget) return;
 
         if (WalkDirection == WalkableDirection.Right)
@@ -135,7 +127,7 @@ public class Knight : MonoBehaviour
     }
     public void OnHit(int damage, Vector2 knockback)
     {
-        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        rb.velocity = Vector2.zero;
     }
 
     public void OnCliffDetected()
@@ -145,4 +137,33 @@ public class Knight : MonoBehaviour
             FlipDirection();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Player")) return;
+
+        Damageable player = collision.collider.GetComponent<Damageable>();
+        if (player != null)
+        {
+            Debug.Log("Archer hit Player via collision!");
+
+            Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
+
+            player.Hit(10, knockbackDir);
+
+            Collider2D archerCol = GetComponent<Collider2D>();
+            Collider2D playerCol = collision.collider;
+
+            Physics2D.IgnoreCollision(archerCol, playerCol, true);
+            StartCoroutine(ReenableCollision(archerCol, playerCol, 2f));
+        }
+    }
+
+    private IEnumerator ReenableCollision(Collider2D a, Collider2D b, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Physics2D.IgnoreCollision(a, b, false);
+    }
+
+
 }

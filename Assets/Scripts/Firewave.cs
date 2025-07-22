@@ -27,7 +27,7 @@ public class Firewave : MonoBehaviour
     {
         isLanded = true;
         rb.velocity = Vector2.zero;
-        rb.bodyType = RigidbodyType2D.Static; // Zatrzymuje fizykê – nie spadnie, nie przesunie siê
+        rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +37,6 @@ public class Firewave : MonoBehaviour
         if (dmg != null && collision.CompareTag("Player"))
         {
             dmg.Hit(damage, Vector2.zero);
-            // Nie niszczymy, zostaje na ziemi
         }
     }
 }
